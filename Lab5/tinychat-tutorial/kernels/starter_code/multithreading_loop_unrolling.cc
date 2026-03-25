@@ -14,8 +14,8 @@ struct multithreading_loop_unrolling_thread_args {
 };
 //already works
 static void *multithreading_loop_unrolling_worker_func(void *args) {
-    struct multithreading_loop_unrolling_thread_args  =
-        (struct multithreading_loop_unrolling_thread*mat_args_args *)args;
+    struct multithreading_loop_unrolling_thread_args *mat_args =
+        (struct multithreading_loop_unrolling_thread_args*)args;
     const struct matmul_params *params = mat_args->params;
     const struct matrix *A = &params->A, *B = &params->B, *C = &params->C;
     const int block_size = params->block_size;
